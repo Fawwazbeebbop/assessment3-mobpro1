@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Scelery</string>
+    <string name="introduction">Explore, Capture ,and Save every moment\nwith Scelery ( Scenery Gallery )</string>
+    <string name="getting_started">Get Started</string>
+    <string name="back_arrow">Back</string>
+    <string name="picture">Picture %1$s</string>
+    <string name="error_notification">Cannot load the data\nnetwork error !</string>
+    <string name="button_try">Try again later</string>
+    <string name="icon_profile">Profile</string>
+    <string name="close">Close</string>
+    <string name="logout">Logout</string>
+    <string name="add_scenery">Add Scenery</string>
+    <string name="title_scenery">Title Scenery</string>
+    <string name="location">Location</string>
+    <string name="cancel_button">Cancel</string>
+    <string name="save_button">Save</string>
+    <string name="share_template">Scenery Title: %1$s\nLocation: %2$s\nImage: %3$s</string>
+    
+</resources>
