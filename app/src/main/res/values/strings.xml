@@ -4,7 +4,7 @@
     <string name="getting_started">Get Started</string>
     <string name="back_arrow">Back</string>
     <string name="picture">Picture %1$s</string>
-    <string name="error_notification">Cannot load the data\nnetwork error !</string>
+    <string name="error_notification">Cannot load the data\n or data is empty !</string>
     <string name="button_try">Try again later</string>
     <string name="icon_profile">Profile</string>
     <string name="close">Close</string>

@@ -290,7 +290,6 @@ fun ScreenContent2(
                 ) {
                     items(data) {
                         GridData(it) {
-//                        navController.navigate(Screen.FormUbah.withId(it.review_id))
                             sceneryData = it
                             showDeleteDialog = true
                         }
@@ -323,7 +322,7 @@ fun ScreenContent2(
                         textAlign = TextAlign.Center,
                         color = Color(0xFF29A478)
                     )
-                    Spacer(modifier = Modifier.height(8.dp))
+                    Spacer(modifier = Modifier.height(12.dp))
                     Button(
                         onClick = {
                             CoroutineScope(Dispatchers.IO).launch { signIn(context, dataStore) }
