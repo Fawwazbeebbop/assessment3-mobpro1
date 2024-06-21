@@ -96,8 +96,8 @@ import org.d3if3051.assessment3.BuildConfig
 import org.d3if3051.assessment3.R
 import org.d3if3051.assessment3.model.Scenery
 import org.d3if3051.assessment3.model.User
+import org.d3if3051.assessment3.network.Api
 import org.d3if3051.assessment3.network.ApiStatus
-import org.d3if3051.assessment3.network.ImageApi
 import org.d3if3051.assessment3.network.UserDataStore
 import org.d3if3051.assessment3.ui.theme.Assessment3Theme
 import org.d3if3051.assessment3.ui.theme.DarkGreen
@@ -124,7 +124,7 @@ fun AppScreen(navController: NavHostController) {
         if (bitmap != null) showSceneryDialog = true
     }
 
-    val isSuccess by viewModel.querySucces
+    val isSuccess by viewModel.querySuccess
 
     LaunchedEffect(isSuccess) {
         if (isSuccess) {
@@ -298,7 +298,7 @@ fun ScreenContent2(
             }
             if (showDeleteDialog) {
                 DeleteDialog(data = sceneryData!!, onDismissRequest = { showDeleteDialog = false }) {
-                    viewModel.deleteData(userId, sceneryData!!.scenery_id, sceneryData!!.delete_hash)
+                    viewModel.deleteData(userId, sceneryData!!.scenery_id)
                     showDeleteDialog = false
                 }
             }
@@ -377,7 +377,7 @@ fun GridData(scenery: Scenery, onClick: () -> Unit) {
     ) {
         AsyncImage(
             model = ImageRequest.Builder(LocalContext.current)
-                .data(ImageApi.getImageUrl(scenery.image_id))
+                .data(Api.getImageUrl(scenery.image_id))
                 .crossfade(true)
                 .build(),
             contentDescription = stringResource(R.string.picture, scenery.judul_pemandangan),
@@ -463,7 +463,7 @@ fun ListItem(data: Scenery, onClick: () -> Unit) {
         Row(horizontalArrangement = Arrangement.SpaceBetween, modifier = Modifier.fillMaxWidth()) {
             AsyncImage(
                 model = ImageRequest.Builder(LocalContext.current)
-                    .data(ImageApi.getImageUrl(data.image_id))
+                    .data(Api.getImageUrl(data.image_id))
                     .crossfade(true)
                     .build(),
                 contentDescription = "Image ${data.judul_pemandangan}",
@@ -516,7 +516,7 @@ fun ListItem(data: Scenery, onClick: () -> Unit) {
                         context = context,
                         message = context.getString(
                             R.string.share_template,
-                            data.judul_pemandangan, data.lokasi, ImageApi.getImageUrl(data.image_id)
+                            data.judul_pemandangan, data.lokasi, Api.getImageUrl(data.image_id)
                         )
                     )
                 }

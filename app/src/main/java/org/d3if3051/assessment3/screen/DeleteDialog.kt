@@ -14,7 +14,6 @@ import androidx.compose.material3.ButtonDefaults.buttonColors
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults.cardColors
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -30,7 +29,7 @@ import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import org.d3if3051.assessment3.R
 import org.d3if3051.assessment3.model.Scenery
-import org.d3if3051.assessment3.network.ImageApi
+import org.d3if3051.assessment3.network.Api
 import org.d3if3051.assessment3.ui.theme.DarkGreen
 import org.d3if3051.assessment3.ui.theme.Red
 import org.d3if3051.assessment3.ui.theme.SoftGreen
@@ -52,7 +51,7 @@ fun DeleteDialog(
                 Spacer(modifier = Modifier.height(16.dp))
                 AsyncImage(
                     model = ImageRequest.Builder(LocalContext.current)
-                        .data(ImageApi.getImageUrl(data.image_id))
+                        .data(Api.getImageUrl(data.image_id))
                         .crossfade(true)
                         .build(),
                     contentDescription = "Image ${data.judul_pemandangan}"
